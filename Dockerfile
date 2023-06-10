@@ -3,7 +3,7 @@ FROM nvidia/cuda:12.1.0-base-ubuntu22.04
 # Update package repositories and install dependencies
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata. 
-RUN apt install -y git wget curl python3-pip python3 ffmpeg sudo ssh vim ibsm6 libxrender1 libfontconfig1
+RUN apt install -y git wget curl python3-pip python3 ffmpeg sudo ssh vim 
 
 # Add a new user
 RUN useradd -ms /bin/bash user && \
