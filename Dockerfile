@@ -21,7 +21,7 @@ ENV PATH /opt/anaconda/bin:$PATH
 
 # Create the Conda environment for DeepFaceLab
 ADD environment.yml /
-RUN conda env create -f environment.yml
+RUN conda env create -f /environment.yml
 
 # Activate the Conda environment
 RUN echo "source activate deepfacelab" > ~/.bashrc
