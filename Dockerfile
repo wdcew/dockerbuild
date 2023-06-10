@@ -30,7 +30,7 @@ ENV PATH /opt/anaconda/envs/deepfacelab/bin:$PATH
 WORKDIR /home/user
 RUN git clone --depth 1 https://github.com/nagadit/DeepFaceLab_Linux.git
 WORKDIR /home/user/DeepFaceLab_Linux
-RUN git clone --depth 1 https://github.com/iperov/DeepFaceLab.git && \
+RUN git clone --depth 1 https://github.com/iperov/DeepFaceLab.git
 
 # VOLUME /home/user/DeepFaceLab_Linux/
 
