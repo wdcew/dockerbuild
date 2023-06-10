@@ -20,7 +20,7 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && 
 ENV PATH /opt/anaconda/bin:$PATH
 
 # Create the Conda environment for DeepFaceLab
-ADD environment.yml
+ADD environment.yml /
 RUN conda env create -f environment.yml
 
 # Activate the Conda environment
