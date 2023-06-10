@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.1.0-base-ubuntu22.04
+FROM nvidia/cuda:11.3.1-base-ubuntu22.04
 
 # Update package repositories and install dependencies
 RUN apt update
