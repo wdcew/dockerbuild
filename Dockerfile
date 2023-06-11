@@ -34,10 +34,9 @@ WORKDIR /home/user/DeepFaceLab_Linux
 RUN git clone --depth 1 https://github.com/iperov/DeepFaceLab.git
 
 # VOLUME /home/user/DeepFaceLab_Linux/
+=======
 
 
 ADD start.sh /
-RUN chmod +x /start.sh
-USER 1000
 
-CMD [ "/start.sh" ]
+CMD [ "sleep infinity" ]
