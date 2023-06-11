@@ -21,37 +21,8 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && 
 ENV PATH /opt/anaconda/bin:$PATH
 
 # Create the Conda environment for DeepFaceLab
-ADD environment.yml /
-RUN conda env create -f /environment.yml
-
-# Activate the Conda environment
-#RUN echo "source activate deepfacelab" > ~/.bashrc
-ENV PATH /opt/anaconda/envs/deepfacelab/bin:$PATH
-
-WORKDIR /home/user
-RUN git clone --depth 1 https://github.com/nagadit/DeepFaceLab_Linux.git
-WORKDIR /home/user/DeepFaceLab_Linux
-RUN git clone --depth 1 https://github.com/iperov/DeepFaceLab.git
-
-# VOLUME /home/user/DeepFaceLab_Linux/
-
-# Add a new user
-#RUN useradd -ms /bin/bash user && \
-#    echo "user:password" | chpasswd && \
-#    adduser user sudo
-
-
-# Install Anaconda
-RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && \
-    bash Anaconda3-2021.05-Linux-x86_64.sh -b -p /opt/anaconda && \
-    rm Anaconda3-2021.05-Linux-x86_64.sh
-
-# Set up Anaconda environment
-ENV PATH /opt/anaconda/bin:$PATH
-
-# Create the Conda environment for DeepFaceLab
-ADD environment.yml /
-RUN conda env create -f /environment.yml
+#ADD environment.yml /
+#RUN conda env create -f /environment.yml
 
 # Activate the Conda environment
 #RUN echo "source activate deepfacelab" > ~/.bashrc
