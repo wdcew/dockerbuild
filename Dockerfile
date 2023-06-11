@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM runpod/kasm-desktop:1.0.0
 
 # Update package repositories and install dependencies
 RUN apt update
