@@ -1,6 +1,7 @@
 FROM runpod/kasm-desktop:1.0.0
 
 # Update package repositories and install dependencies
+USER root
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata. 
 RUN apt install -y git wget curl python3-pip python3 ffmpeg sudo ssh vim 
