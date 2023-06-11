@@ -38,5 +38,6 @@ RUN git clone --depth 1 https://github.com/iperov/DeepFaceLab.git
 
 ADD start.sh /
 RUN chmod +x /start.sh
+USER 1000
 
 CMD [ "/start.sh" ]
