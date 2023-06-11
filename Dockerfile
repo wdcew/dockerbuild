@@ -3,7 +3,7 @@ FROM runpod/kasm-desktop:1.0.0
 # Update package repositories and install dependencies
 USER root
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata. 
+#RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata. 
 RUN apt install -y git wget curl python3-pip python3 ffmpeg sudo ssh vim 
 
 # Add a new user
@@ -25,7 +25,7 @@ ADD environment.yml /
 RUN conda env create -f /environment.yml
 
 # Activate the Conda environment
-RUN echo "source activate deepfacelab" > ~/.bashrc
+#RUN echo "source activate deepfacelab" > ~/.bashrc
 ENV PATH /opt/anaconda/envs/deepfacelab/bin:$PATH
 
 WORKDIR /home/user
