@@ -5,6 +5,7 @@ USER root
 RUN apt update
 #RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata. 
 RUN apt install -y git wget curl python3-pip python3 ffmpeg sudo ssh vim 
+<<<<<<< HEAD
 
 # Add a new user
 #RUN useradd -ms /bin/bash user && \
@@ -34,6 +35,8 @@ WORKDIR /home/user/DeepFaceLab_Linux
 RUN git clone --depth 1 https://github.com/iperov/DeepFaceLab.git
 
 # VOLUME /home/user/DeepFaceLab_Linux/
+=======
+>>>>>>> 7d65b60e5b166e3c58dc563d3b98acce147beaef
 
 # Add a new user
 #RUN useradd -ms /bin/bash user && \
@@ -65,7 +68,10 @@ RUN git clone --depth 1 https://github.com/iperov/DeepFaceLab.git
 # VOLUME /home/user/DeepFaceLab_Linux/
 
 ADD start.sh /
+<<<<<<< HEAD
 RUN chmod +x /start.sh
 USER 1000
+=======
+>>>>>>> 7d65b60e5b166e3c58dc563d3b98acce147beaef
 
 CMD [ "/start.sh" ]
