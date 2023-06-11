@@ -7,9 +7,9 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata.
 RUN apt install -y git wget curl python3-pip python3 ffmpeg sudo ssh vim 
 
 # Add a new user
-RUN useradd -ms /bin/bash user && \
-    echo "user:password" | chpasswd && \
-    adduser user sudo
+#RUN useradd -ms /bin/bash user && \
+#    echo "user:password" | chpasswd && \
+#    adduser user sudo
 
 
 # Install Anaconda
