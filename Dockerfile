@@ -28,12 +28,12 @@ RUN echo "source activate deepfacelab" > ~/.bashrc
 ENV PATH /opt/anaconda/envs/deepfacelab/bin:$PATH
 
 WORKDIR /home/user
-RUN git clone --depth 1 https://github.com/nagadit/DeepFaceLab_Linux.git
+RUN git clone --depth 1 https://github.com/infinitygorkem/DeepFaceLab_Linux.git
 WORKDIR /home/user/DeepFaceLab_Linux
-RUN git clone --depth 1 https://github.com/iperov/DeepFaceLab.git
+RUN mkdir DeepFaceLab && cd DeepFaceLab && git clone --depth 1 -b DFL https://github.com/infinitygorkem/DeepFaceLab_Linux.git
 
 ADD env.sh /home/user 
-RUN cp -f env.sh ./DeepFaceLab_Linux/scripts/env.sh
+RUN cp -f /home/user/env.sh /home/user/DeepFaceLab_Linux/scripts/env.sh
 
 # VOLUME /home/user/DeepFaceLab_Linux/
 
