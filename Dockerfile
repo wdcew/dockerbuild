@@ -12,9 +12,9 @@ RUN useradd -ms /bin/bash user && \
 
 
 # Install Anaconda
-RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && \
-    bash Anaconda3-2021.05-Linux-x86_64.sh -b -p /opt/anaconda && \
-    rm Anaconda3-2021.05-Linux-x86_64.sh
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py38_23.3.1-0-Linux-x86_64.sh && \
+    bash Miniconda3-py38_23.3.1-0-Linux-x86_64.sh -b -u -p /opt/anaconda && \
+    rm Miniconda3-py38_23.3.1-0-Linux-x86_64.sh
 
 # Set up Anaconda environment
 ENV PATH /opt/anaconda/bin:$PATH
@@ -24,7 +24,7 @@ ADD environment.yml /
 RUN conda env create -f /environment.yml
 
 # Activate the Conda environment
-RUN echo "source activate deepfacelab" > ~/.bashrc
+RUN echo "source activate deepfacelab" >> ~/.bashrc
 ENV PATH /opt/anaconda/envs/deepfacelab/bin:$PATH
 
 WORKDIR /home/user
