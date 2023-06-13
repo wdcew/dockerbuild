@@ -30,10 +30,11 @@ ENV PATH /opt/anaconda/envs/deepfacelab/bin:$PATH
 WORKDIR /home/user
 RUN git clone --depth 1 https://github.com/infinitygorkem/DeepFaceLab_Linux.git
 WORKDIR /home/user/DeepFaceLab_Linux
-RUN mkdir DeepFaceLab && cd DeepFaceLab && git clone --depth 1 -b DFL https://github.com/infinitygorkem/DeepFaceLab_Linux.git
+RUN mkdir DeepFaceLab && cd DeepFaceLab && git clone --depth 1 -b DFL https://github.com/infinitygorkem/DeepFaceLab_Linux.git DeepFaceLab
 
 ADD env.sh /home/user 
 RUN cp -f /home/user/env.sh /home/user/DeepFaceLab_Linux/scripts/env.sh
+RUN apt-get install libsm6 libxrender1 libfontconfig2
 
 # VOLUME /home/user/DeepFaceLab_Linux/
 
