@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 # Update package repositories and install dependencies
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata. 
-RUN apt install -y git wget curl python3-pip python3 ffmpeg sudo ssh vim fastjar tmux
+RUN apt install -y git wget curl python3-pip python3 ffmpeg sudo ssh vim fastjar tmux libsm6 libxrender1 libfontconfig1
 
 # Add a new user
 RUN useradd -ms /bin/bash user && \
@@ -30,7 +30,7 @@ ENV PATH /opt/anaconda/envs/deepfacelab/bin:$PATH
 WORKDIR /home/user
 RUN git clone --depth 1 https://github.com/infinitygorkem/DeepFaceLab_Linux.git
 WORKDIR /home/user/DeepFaceLab_Linux
-RUN mkdir DeepFaceLab && cd DeepFaceLab && git clone --depth 1 -b DFL https://github.com/infinitygorkem/DeepFaceLab_Linux.git DeepFaceLab
+RUN git clone --depth 1 -b DFL https://github.com/infinitygorkem/DeepFaceLab_Linux.git DeepFaceLab
 
 ADD env.sh /home/user 
 RUN cp -f /home/user/env.sh /home/user/DeepFaceLab_Linux/scripts/env.sh
